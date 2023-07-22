@@ -54,6 +54,19 @@ Escribir test unitarios o de integración que verifiquen los anteriores requerim
 
 Estos desafíos te darán una excelente oportunidad para aprender y poner en práctica tus habilidades de desarrollo en el entorno de Spring Boot y Frontend. ¡Esperamos con ansias ver tus contribuciones a este proyecto!
 
+### Empezando el Desafío
+
+Para empezar crear un fork de este repositorio para implementar los ejercicios.
+
+Adjuntar cualquier documentación al proyecto en forma de archivos con extensión `.md`.
+
+Se recomienda ir haciendo commits a medida que se avanza con la solución. Agrupando estos commits si corresponde hacerlo.
+
+## Envíar el código para evaluación
+
+Luego al finalizar enviar un email con el link al fork a la persona que te envió este test.
+
+
 *Ante cualquier duda podes contactarme directamente al correo [marcelo.lopez@somosetica.com](mailto:marcelo.lopez@somosetica.com)*
 
 ¡Buena suerte de parte de todo el equipo de e-tica!
