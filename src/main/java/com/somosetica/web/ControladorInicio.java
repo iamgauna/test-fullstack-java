@@ -1,5 +1,6 @@
 package com.somosetica.web;
 
+import com.somosetica.domain.Persona;
 import lombok.extern.slf4j.Slf4j;
 import com.somosetica.servicio.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,10 @@ public class ControladorInicio {
         log.info("ejecutando el controlador Spring MVC");
         model.addAttribute("personas", personas);
         return "index";
+    }
+    
+    @GetMapping("/agregar")
+    public String agregar(Persona persona){
+        return "modificar";
     }
 }
