@@ -2,6 +2,7 @@ package com.somosetica.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import lombok.Data;
 
 @Data
@@ -15,18 +16,21 @@ public class Persona implements Serializable{
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long idPersona;
-    //2. Nombre completo
+    
+    @NotEmpty
     private String nombre;
+    @NotEmpty
     private String apellido;
     
-    //3. Contraseña: Encriptado
+    @NotEmpty
     private String contrasena;
     
-    //4. Correo
+    @NotEmpty
     private String email;
     
-    //5. Estado: Los usuarios inactivos no pueden iniciar sesion
+    @NotEmpty
     private String estado;
     
+    @NotEmpty
     private String telefono;
 }

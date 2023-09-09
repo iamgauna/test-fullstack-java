@@ -15,21 +15,27 @@
             <br/>
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" th:field="*{nombre}"/>
+            <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Error Nombre</span>
             <br/>
             <label for="apellido">Apellido:</label>
             <input type="text" name="apellido" th:field="*{apellido}"/>
+            <span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}">Error Apellido</span>
             <br/>
             <label for="email">Email:</label>
             <input type="email" name="email" th:field="*{email}"/>
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Error Email</span>
             <br/>
             <label for="telefono">Teléfono:</label>
             <input type="tel" name="telefono" th:field="*{telefono}"/>
+            <span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}">Error Telefono</span>
             <br/>
             <label for="estado">estado</label>
             <input type="tel" name="telefono" th:field="*{estado}"/>
+            <span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}">Error Telefono</span>
             <br/>
             <label for="contrasena">Contraseña</label>
             <input type="tel" name="telefono" th:field="*{contrasena}"/>
+            <span th:if="${#fields.hasErrors('contrasena')}" th:errors="*{contrasena}">Error Nombre</span>
             <br/>
             <input type="submit" name="guardar" value="Guardar"/>
         </form>
