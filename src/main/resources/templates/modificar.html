@@ -11,6 +11,7 @@
         <br/>
         <form th:action="@{/guardar}" method="post" 
               th:object="${persona}"> <!-- relacionamos nuestros datos a nuestro objeto Persona -->
+            <input type="hidden" name="idPersona" th:field="*{idPersona}"
             <br/>
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" th:field="*{nombre}"/>
