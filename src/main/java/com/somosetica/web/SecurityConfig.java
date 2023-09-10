@@ -15,7 +15,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{//WebSecurityCo
         auth.inMemoryAuthentication()
                 .withUser("eko")
                     .password("{noop}etica")
-                    .roles("ADMIN","USER");
+                    .roles("ADMIN","USER")
+                .and()
+                .withUser("user")
+                    .password("{noop}etica")
+                    .roles("USER");
     }
     
     @Override
