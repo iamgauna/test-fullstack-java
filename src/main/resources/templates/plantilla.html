@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"><!-- Agregamos el concepto de seguridad de thymeleaf -->
     <head>
         <title>Plantilla</title>
         <meta charset="UTF-8"/>
@@ -13,6 +14,8 @@
         <footer th:fragment="footer">
             <p>Derechos Reservados <a href="https://www.instagram.com/eko_paraguay/" target="_blank">Etica S. A.</a></p>
             <form method="POST" th:action="@{/logout}">
+                <b>User:</b>  <span sec:authentication="name">Usuario que hizo loguin</span> |
+                <b>Roles:</b> <span sec:authentication="principal.authorities">Roles</span> |
                 <a href="#" onclick="this.parentNode.submit();">Logout</a>
             </form>
         </footer>
