@@ -38,6 +38,9 @@ public class ControladorInicio {
     
     @PostMapping("/guardar")
     public String guardar(@Valid Persona persona, Errors errors){
+        if(errors.hasErrors()){
+            return "modificar";
+        }
         personaService.guardar(persona);
         return "redirect:/";//redireccionamos al endpoint /
     }
