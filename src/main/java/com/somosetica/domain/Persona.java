@@ -2,6 +2,7 @@ package com.somosetica.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import lombok.Data;
 
@@ -26,6 +27,7 @@ public class Persona implements Serializable{
     private String contrasena;
     
     @NotEmpty
+    @Email
     private String email;
     
     @NotEmpty
