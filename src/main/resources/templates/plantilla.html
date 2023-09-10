@@ -12,6 +12,9 @@
         
         <footer th:fragment="footer">
             <p>Derechos Reservados <a href="https://www.instagram.com/eko_paraguay/" target="_blank">Etica S. A.</a></p>
+            <form method="POST" th:action="@{/logout}">
+                <a href="#" onclick="this.parentNode.submit();">Logout</a>
+            </form>
         </footer>
         
     </body>
