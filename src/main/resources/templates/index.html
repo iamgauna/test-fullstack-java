@@ -11,7 +11,7 @@
          <section th:replace="layout/botonesAgregar :: botonesAgregar"></section>
          
          
-         
+        <footer th:replace="plantilla :: footer"></footer>
         <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/agregar}">Crear Persona</a>
         
         <div th:if="${personas != null and !personas.empty}">
@@ -37,6 +37,6 @@
         <div th:if="${personas == null or personas.empty}">
             La lista de personas está vacía
         </div>
-        <footer th:replace="plantilla :: footer"></footer>
+        
     </body>
 </html>
