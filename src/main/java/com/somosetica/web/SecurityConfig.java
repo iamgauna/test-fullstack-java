@@ -15,11 +15,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{//WebSecurityCo
         auth.inMemoryAuthentication()
                 .withUser("eko")
                     .password("{noop}etica")
-                    .roles("ADMIN","USER")
+                    .roles("ADMIN","CONSULTOR")
                 .and()
                 .withUser("user")
                     .password("{noop}etica")
-                    .roles("USER");
+                    .roles("CONSULTOR");
     }
     
     @Override
@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{//WebSecurityCo
                 .antMatchers("/editar/**", "/agregar/**", "/eliminar")
                     .hasRole("ADMIN")
                 .antMatchers("/")
-                    .hasAnyRole("USER","ADMIN")
+                    .hasAnyRole("CONSULTOR","ADMIN")
                 .and()
                     .formLogin()
                     .loginPage("/login")
