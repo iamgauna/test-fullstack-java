@@ -1,72 +1,52 @@
-<h1 align="center">Bienvenido, futuro compañero!</h1>
+<h1 align="center">Desafio Soporte - Nicolas Gauna</h1>
 
-¡Saludos de [e-tica!](https://www.linkedin.com/company/eticapy/) Si estás leyendo esto, significa que queremos conocer tus habilidades.
+Mas que AGRADECIDO por la oportunidad de mostrar mis habilidades en este desafio.
 
 ### Acerca del Proyecto
 
-Este proyecto es mantenido por e-tica, una empresa dedicada a crear soluciones tecnológicas innovadoras. Nuestro objetivo con este proyecto es desarrollar una API Rest simple utilizando Spring Boot, así como integrarla con desafíos frontend. A continuación, encontrarás algunos desafíos interesantes para trabajar en este proyecto.
+Antes que nada disculpas por no cumplir con todos los puntos del desafio, voy a ir explicando los puntos mas abajo. Pero de igual manera, queda en evidencia mis conocimientos del tema.
+
+Pero la idea inicial fue la de crear un API para la gestion de Clientes (Almacenados en la tabla **test.persona**) y gestion de Administradores (Almacenados en la tabla **test.usuario**). Los Administradores lo dividimos en 2 tipos de roles: ROLE_ADMIN y ROLE_CONSULTOR.
+
+Logramos crear la interfaz grafica para la gestion de clientes pero nos quedamos cortos para la interfaz de gestion de los administradores. Aun asi, queda en evidencia mi conocimiento del tema pero me faltan pulir detalles que muy rapidamente ire perfeccionando al paso que realice desarrollos.
+
+### Tecnologias utilizadas:
+**1. BackEnd**
+* Para el BackEnd utilizamos las tecnologias solicitadas en el README anterior (Java y Spring) y tambien utilizamos las librerias de 
+**2. FrontEnd**
+Para el FrontEnd utilizamos las tecnologias de:
+* Thymeleaf
+* jQuery
+* Bootstrap
+* HTML5
 
 ### Instruccion a tener en cuenta
-* Para el backend es requerimiento utilizar el lenguaje **Java**, junto con el framework **Springboot**.
-* Utilizar los HTTP METHODS adecuados para cada servicio.
-* Para el frontend el framework es a elección
-* Para la persistencia se recomienda utilizar alguna solucion en memoria como h2 o en caso de utilizar postgres u otro motor favor facilitar el DML o un docker-compose.yml para montar.
-* Se valorará la facilidad para levantar todo el proyecto y un readme con instrucciones.
-
-
-### Desafíos Backend con Spring Boot
-
-**1. API de Usuarios:** Diseña los servicios necesarios para un CRUD de Usuarios:
-* Crear, modificar, eliminar y listar usuarios
-* Filtro por estado, nombre y lo que se crea pertinente
-Cada Usuario debe contener minimamente los siguientes datos:
-* Identificador único
-* Nombre comleto
-* Contraseña (cifrado es opcional)
-* Correo electrónico 
-* Estado (ACTIVO e INACTIVO) 
-* Y otra información relevante.
-* Rol (Obs: Los roles pueden ser ADMIN, CONSULTOR)
-
-*Obs: Puedes agregar cualquier servicio que se crea necesario al API.*
-
-*Obs 2: El rol **ADMIN** puede consumir todos los servicios, el rol **CONSULTOR** solo los listados (GET)*
-
-*Obs 3: Los usuarios inactivos no pueden iniciar sesion*
-
-**2. Implementar autenticación y autorización:** Crea una capa de autenticación y autorización para proteger los endpoints de la API. 
-* Asegúrate de que solo los usuarios autenticados y autorizados puedan acceder a ciertos recursos.
-* No olvides el control de los ROLES.
-
-*Obs: Se sugiere usar SpringSecurity para la seguridad. Pero el mismo tambien es opcional*
+**1. Persistencia de Datos**
+* Para la persistencia de datos utilizamos la base de datos MySQL, motivo por el que sera necesario ejecutar los DML almacenados en la carpeta **/DML** del proyecto.
+* En caso de querer utilizar otro motor de base de datos realizar las modificaciones pertinentes en los archivos DML y en el archivo **application.properties** del proyecto.
+**2. Inicio de sesion**
+* En el DML **04.INSERT-INTO-usuario.sql** relizamos un insert con los usuarios para el inicio de sesion. Insertamos 2 usuarios: **admin** y **consulta** y ambos tienen la misma contraseña: **123**
+* Me quede corto a la hora de intentar crear una interfaz grafica para la administracion de usuarios, motivo por el que si queremos insertar un nuevo Usuario Administrador debemos insertar manualmente en la tabla **test.usuario**
+* Como utilizamos spring-security para el encriptado de contraseña debemos utilizar la clase **EncriptarPassword.java** ubicado en el paquete com.somosetica.util. Y en la variable **password** asignar la contraseña que queremos que posea el Administrador.
 
 ### Test Unitarios
-
-Escribir test unitarios o de integración que verifiquen los anteriores requerimientos funcionales. No es necesario tener full covertura, sino seleccionar los puntos más críticos de la lógica del sistema y enfocarse en eso. Por ejemplo, asegurarse de que se puedan crear correctamente los Usuarios y marcarlas como activos.
-
-### Desafíos Frontend Integrados
-
-1. **Diseñar una interfaz para inicio de sesion** Crea una pagina de inicio de sesion que reciba usuario y contraseña, en caso de exito redirigir a la pagina de listado de usuarios, caso contrario mostrar un mensaje de error. 
-
-1. **Diseñar una interfaz para mostrar la lista de usuarios:** Crea una interfaz web para consumir el endpoint que obtiene la lista de usuarios. Muestra la información de manera atractiva y fácil de entender.
-
-2. **Implementar un formulario para agregar nuevos usuarios:** Diseña un formulario que permita agregar nuevos usuarios a través de la API backend. Asegúrate de validar los campos y proporcionar mensajes de error claros.
-
-Estos desafíos te darán una excelente oportunidad para aprender y poner en práctica tus habilidades de desarrollo en el entorno de Spring Boot y Frontend. ¡Esperamos con ansias ver tus contribuciones a este proyecto!
-
-### Empezando el Desafío
-
-Para empezar crear un fork de este repositorio para implementar los ejercicios.
-
-Adjuntar cualquier documentación al proyecto en forma de archivos con extensión `.md`.
-
-Se recomienda ir haciendo commits a medida que se avanza con la solución. Agrupando estos commits si corresponde hacerlo.
-
-## Envíar el código para evaluación
-
-Luego al finalizar enviar un email con el link al fork a la persona que te envió este test.
-
-
-*Ante cualquier duda podes contactarme directamente al correo [marcelo.lopez@somosetica.com](mailto:marcelo.lopez@somosetica.com)*
-
-¡Buena suerte de parte de todo el equipo de e-tica!
+**1. Capa de Autenticacion:**
+* Creamos una vista de login el cual impide que se puedan ver los clientes en caso de que no se inicie sesion.
+* En caso de que el usuario no ingrese las credenciales correctas le impide avanzar a la lista de clientes
+**2. Capa de Autorizacion: ROLE_ADMIN**
+* Inicamos sesion con el usuario admin con el pass 123
+* Se visuliza el boton Agregar (Para agregar clientes)
+* Se visuliza el boton Editar (Para editar clientes)
+* Se visuliza el boton Eliminar (Para eliminar clientes)
+* En el footer se visualiza el nombre del usuario y los roles que posee. Se debe visualizar que el usuario posea el rol ROLE_ADMIN y ROLE_CONSULTOR
+**2. Capa de Autorizacion: ROL_CONSULTOR**
+* Inicamos sesion con el usuario consulta con el pass 123
+* NO SE DEBE VISUALIZAR el boton Agregar (Para agregar clientes)
+* NO SE DEBE VISUALIZAR el boton Editar (Para editar clientes)
+* NO SE DEBE VISUALIZAR el boton Eliminar (Para eliminar clientes)
+* En el footer se visualiza el nombre del usuario y los roles que posee. Se debe visualizar que el usuario posea el rol ROLE_CONSULTOR
+**3. Validacion de datos:**
+* Inicamos sesion con el usuario admin con el pass 123
+* Realizamos un clic en el boton Agregar y se despliega un modal con el formulario para agregar un nuevo cliente. Los campos obligatorios se resaltan en color rojo (nombre, apellido, email, saldo, contraseña, estado) y los campos opcionales en color verde.
+* Realizamos un clic en el boton Agregar y se despliega un modal con el formulario para agregar un nuevo cliente. Los campos obligatorios se resaltan en color rojo (nombre, apellido, email, saldo, contraseña, estado) y los campos opcionales en color verde.
+* Realizamos un clic en el boton Editar y nos debe impedir guardar los cambios en caso de que alguno de los campos se encuentren vacios.
