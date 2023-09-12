@@ -1,0 +1,4 @@
+INSERT INTO `test`.`persona` (`nombre`, `apellido`, `contrasena`, `email`, `telefono`, `estado`, `saldo`) VALUES ('Juan', 'Perez', '123', 'juan@perez.com', '0986177774', 'ACTIVO', 50);
+INSERT INTO `test`.`persona` (`nombre`, `apellido`, `contrasena`, `email`, `telefono`, `estado`, `saldo`) VALUES ('Carla ', 'Gomez', '321', 'carla@gomez.com', '0986177774', 'ACTIVO', 100);
+INSERT INTO `test`.`persona` (`nombre`, `apellido`, `contrasena`, `email`, `telefono`, `estado`, `saldo`) VALUES ('Juan', 'Perez', '123', 'juan@perez.com', '0986177774', 'ACTIVO', 50);
+INSERT INTO `test`.`persona` (`nombre`, `apellido`, `contrasena`, `email`, `telefono`, `estado`, `saldo`) VALUES ('Carla ', 'Gomez', '321', 'carla@gomez.com', '0986177774', 'ACTIVO', 100);

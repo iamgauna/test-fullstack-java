@@ -1,0 +1,2 @@
+INSERT INTO `test`.`usuario` (`id_usuario`, `username`, `password`) VALUES ('1', 'admin', 'etica');
+INSERT INTO `test`.`usuario` (`id_usuario`, `username`, `password`) VALUES ('2', 'consulta', 'etica');
