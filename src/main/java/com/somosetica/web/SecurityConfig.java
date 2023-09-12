@@ -14,34 +14,25 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableWebSecurity //Habilitamos la seguridad WEB
 public class SecurityConfig extends WebSecurityConfigurerAdapter{//WebSecurityConfigurerAdapter utilizaremos para configurar los usuarios que vamos a utilizar
     
-    /*/Manejo de los usuarios desde la tablas rol y Usuarios:
+    //Manejo de los usuarios desde la tablas rol y Usuarios:
     @Autowired
     private UserDetailsService userDetailsService;
 
+    //
     @Bean
     public BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
+    //
     
     @Autowired
     public void configurerGlobal(AuthenticationManagerBuilder build) throws Exception{
         build.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-    }*/
-    
-    
-    
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-        auth.inMemoryAuthentication()
-                .withUser("eko")
-                    .password("{noop}etica")
-                    .roles("ADMIN","CONSULTOR")
-                .and()
-                .withUser("user")
-                    .password("{noop}etica")
-                    .roles("CONSULTOR");
+        //build.userDetailsService(userDetailsService);
     }
+    //
     
+
     @Override
     protected void configure(HttpSecurity http) throws Exception{
         http.authorizeRequests()
@@ -56,4 +47,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{//WebSecurityCo
                     .exceptionHandling().accessDeniedPage("/errores/403")
                 ;
     }
+
+    /*/
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+        auth.inMemoryAuthentication()
+                .withUser("eko")
+                    .password("{noop}etica")
+                    .roles("ADMIN","CONSULTOR")
+                .and()
+                .withUser("user")
+                    .password("{noop}etica")
+                    .roles("CONSULTOR");
+    }
+    /*/
 }
