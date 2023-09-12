@@ -1,2 +1,2 @@
-INSERT INTO `test`.`usuario` (`id_usuario`, `username`, `password`) VALUES ('1', 'admin', 'etica');
-INSERT INTO `test`.`usuario` (`id_usuario`, `username`, `password`) VALUES ('2', 'consulta', 'etica');
+INSERT INTO `test`.`usuario` (`id_usuario`, `username`, `password`) VALUES ('1', 'admin', '$2a$10$..Jko8C1QiPKSX4cTt2UI.ZtgU4NCof/mZw5XRTJHY7hHyhjCy9lm');
+INSERT INTO `test`.`usuario` (`id_usuario`, `username`, `password`) VALUES ('2', 'consulta', '$2a$10$..Jko8C1QiPKSX4cTt2UI.ZtgU4NCof/mZw5XRTJHY7hHyhjCy9lm');
