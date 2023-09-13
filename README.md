@@ -15,6 +15,7 @@ Logramos crear la interfaz grafica para la gestion de clientes pero nos quedamos
 * Para el BackEnd utilizamos las tecnologias solicitadas en el README anterior (Java y Spring) y tambien utilizamos las librerias de Spring Security para el encriptamiento del password y el manejo de roles.
 
 **2. FrontEnd**
+
 Para el FrontEnd utilizamos las tecnologias de:
 * Thymeleaf
 * jQuery
@@ -25,6 +26,7 @@ Para el FrontEnd utilizamos las tecnologias de:
 **1. Persistencia de Datos**
 * Para la persistencia de datos utilizamos la base de datos MySQL, motivo por el que sera necesario ejecutar los DML almacenados en la carpeta **/DML** del proyecto.
 * En caso de querer utilizar otro motor de base de datos realizar las modificaciones pertinentes en los archivos DML y en el archivo **application.properties** del proyecto.
+
 **2. Inicio de sesion**
 * En el DML **04.INSERT-INTO-usuario.sql** relizamos un insert con los usuarios para el inicio de sesion. Insertamos 2 usuarios: **admin** y **consulta** y ambos tienen la misma contraseña: **123**
 * Me quede corto a la hora de intentar crear una interfaz grafica para la administracion de usuarios, motivo por el que si queremos insertar un nuevo Usuario Administrador debemos insertar manualmente en la tabla **test.usuario**
@@ -42,14 +44,14 @@ Para el FrontEnd utilizamos las tecnologias de:
 * Se visuliza el boton Eliminar (Para eliminar clientes)
 * En el footer se visualiza el nombre del usuario y los roles que posee. Se debe visualizar que el usuario posea el rol ROLE_ADMIN y ROLE_CONSULTOR
 
-**2. Capa de Autorizacion: ROL_CONSULTOR**
+**3. Capa de Autorizacion: ROL_CONSULTOR**
 * Inicamos sesion con el usuario consulta con el pass 123
 * NO SE DEBE VISUALIZAR el boton Agregar (Para agregar clientes)
 * NO SE DEBE VISUALIZAR el boton Editar (Para editar clientes)
 * NO SE DEBE VISUALIZAR el boton Eliminar (Para eliminar clientes)
 * En el footer se visualiza el nombre del usuario y los roles que posee. Se debe visualizar que el usuario posea el rol ROLE_CONSULTOR
 
-**3. Validacion de datos:**
+**4. Validacion de datos:**
 * Inicamos sesion con el usuario admin con el pass 123
 * Realizamos un clic en el boton Agregar y se despliega un modal con el formulario para agregar un nuevo cliente. Los campos obligatorios se resaltan en color rojo (nombre, apellido, email, saldo, contraseña, estado) y los campos opcionales en color verde.
 * Realizamos un clic en el boton Agregar y se despliega un modal con el formulario para agregar un nuevo cliente. Los campos obligatorios se resaltan en color rojo (nombre, apellido, email, saldo, contraseña, estado) y los campos opcionales en color verde.
