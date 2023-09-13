@@ -12,7 +12,8 @@ Logramos crear la interfaz grafica para la gestion de clientes pero nos quedamos
 
 ### Tecnologias utilizadas:
 **1. BackEnd**
-* Para el BackEnd utilizamos las tecnologias solicitadas en el README anterior (Java y Spring) y tambien utilizamos las librerias de 
+* Para el BackEnd utilizamos las tecnologias solicitadas en el README anterior (Java y Spring) y tambien utilizamos las librerias de Spring Security para el encriptamiento del password y el manejo de roles.
+
 **2. FrontEnd**
 Para el FrontEnd utilizamos las tecnologias de:
 * Thymeleaf
@@ -33,18 +34,21 @@ Para el FrontEnd utilizamos las tecnologias de:
 **1. Capa de Autenticacion:**
 * Creamos una vista de login el cual impide que se puedan ver los clientes en caso de que no se inicie sesion.
 * En caso de que el usuario no ingrese las credenciales correctas le impide avanzar a la lista de clientes
+
 **2. Capa de Autorizacion: ROLE_ADMIN**
 * Inicamos sesion con el usuario admin con el pass 123
 * Se visuliza el boton Agregar (Para agregar clientes)
 * Se visuliza el boton Editar (Para editar clientes)
 * Se visuliza el boton Eliminar (Para eliminar clientes)
 * En el footer se visualiza el nombre del usuario y los roles que posee. Se debe visualizar que el usuario posea el rol ROLE_ADMIN y ROLE_CONSULTOR
+
 **2. Capa de Autorizacion: ROL_CONSULTOR**
 * Inicamos sesion con el usuario consulta con el pass 123
 * NO SE DEBE VISUALIZAR el boton Agregar (Para agregar clientes)
 * NO SE DEBE VISUALIZAR el boton Editar (Para editar clientes)
 * NO SE DEBE VISUALIZAR el boton Eliminar (Para eliminar clientes)
 * En el footer se visualiza el nombre del usuario y los roles que posee. Se debe visualizar que el usuario posea el rol ROLE_CONSULTOR
+
 **3. Validacion de datos:**
 * Inicamos sesion con el usuario admin con el pass 123
 * Realizamos un clic en el boton Agregar y se despliega un modal con el formulario para agregar un nuevo cliente. Los campos obligatorios se resaltan en color rojo (nombre, apellido, email, saldo, contraseña, estado) y los campos opcionales en color verde.
